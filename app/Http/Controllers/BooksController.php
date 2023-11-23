@@ -34,8 +34,7 @@ class BooksController extends Controller
         $book->user_id =  $validatedData['user_id'];
         $book->save();
 
-        return redirect()->back()->with('Success','Data Added Successfully!');
-
+        return redirect()->back()->with('success', 'Form submitted successfully!');
 
 
 

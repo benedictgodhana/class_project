@@ -24,6 +24,28 @@ class BooksController extends Controller
             'user_id' => 'required|integer',
         ]);
 
+        $book = new Books();
+        $book->name =  $validatedData['name'];
+        $book->pages =  $validatedData['pages'];
+        $book->IBN =  $validatedData['IBN'];
+        $book->category =  $validatedData['category'];
+        $book->Publisher =  $validatedData['publisher'];
+        $book->year_of_publication =  $validatedData['yop'];
+        $book->user_id =  $validatedData['user_id'];
+        $book->save();
+
+        return redirect()->back()->with('Success','Data Added Successfully!');
+
+
+
+
+
+
+    
+
+
+
+
         // Process the form data (you can store it in the database or perform any other actions)
         // For example, using Eloquent to store data in the database
         

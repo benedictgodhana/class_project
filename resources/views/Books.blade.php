@@ -19,7 +19,8 @@
 <br>
 
 <div style="margin-left:400px">
-    <form action="" method="post">
+    <form action="{{route('submit-form') }}" method="post">
+        @csrf
         
         <div>
             <label for="name">Name</label>
@@ -48,11 +49,11 @@
             <br>
             <label for="user_id">User ID</label>
             <br>
-            <select name="user_id">
-                @foreach($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                @endforeach
-            </select>
+           <select name="user_id" id="">
+            @foreach($users as $user)
+            <option value="{{$user->id}}">{{$user->name}}</option>
+            @endforeach
+           </select>
             <br><br>
             <button type="submit">Submit</button>
             <br><br>
